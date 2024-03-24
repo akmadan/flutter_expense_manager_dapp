@@ -142,6 +142,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       itemCount: successState.transactions.length,
                       itemBuilder: (context, index) {
                         return Container(
+                          margin: const EdgeInsets.only(bottom: 6),
                           padding: const EdgeInsets.symmetric(
                               vertical: 12, horizontal: 12),
                           decoration: BoxDecoration(
@@ -155,20 +156,22 @@ class _DashboardPageState extends State<DashboardPage> {
                                   SvgPicture.asset("assets/eth-logo.svg",
                                       height: 24, width: 24),
                                   const SizedBox(width: 6),
-                                  const Text(
-                                    "1 ETH",
+                                  Text(
+                                    successState.transactions[index].amount
+                                            .toString() +
+                                        ' ETH',
                                     style: TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold),
                                   )
                                 ],
                               ),
-                              const Text(
-                                "0xDF040A14D865aa65eEb3ADD153BF3320f44309d8",
+                              Text(
+                                successState.transactions[index].address,
                                 style: TextStyle(fontSize: 12),
                               ),
-                              const Text(
-                                "NFT Purchase",
+                              Text(
+                                successState.transactions[index].reason,
                                 style: TextStyle(fontSize: 16),
                               )
                             ],

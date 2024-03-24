@@ -53,6 +53,7 @@ class _DepositPageState extends State<DepositPage> {
                         int.parse(amountController.text),
                         reasonsController.text,
                         DateTime.now())));
+                Navigator.pop(context);
               },
               child: Container(
                 height: 50,

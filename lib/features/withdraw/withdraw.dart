@@ -51,6 +51,7 @@ class _WithdrawPageState extends State<WithdrawPage> {
                         int.parse(amountController.text),
                         reasonsController.text,
                         DateTime.now())));
+                Navigator.pop(context);
               },
               child: Container(
                 height: 50,
